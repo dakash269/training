@@ -1,0 +1,58 @@
+Outer class :public or default
+Inner class :public,private,protected,default
+Public :can be access by other packages
+Private:can not be accessed by other classes
+Protected:can not be accessed by other packages but can be by child of other packages
+Default:can not be accessed by other packages
+Only one outer class can be public in a java file.
+
+Instance Variable:when object of class is created, it will be there.
+
+we can not create static variable in a function.but can have static inner class.
+
+Static:Static variable is not present in object of class.It is variable of class not of its object.
+Classname.staticvariablename=3;
+Static member function can not access instance variable.
+Classname.staticfunctionname();
+A class can be declared static, indicating that it contains only static members. It is not possible to create instances of a static class using the new keyword.
+
+We can make object of other class in current class.
+
+Constructer is a member function of class.It has no return type.Its name is same as of Class.It is called automatically when its object is created.We can create more than one constructer in a class.
+
+A class can have only one parent class and can have multiple child classes.
+Private members of superclass can not be accessed by subclass.
+
+Instance initialization block will be starting of code of constructor. It has no return type or name.
+Static Instance initialization block can not access instance variables.
+
+Function Overloading: Different no. of arguments
+Whether both in child,both in parent,one in child another in parent
+Name of function should be same.Returntype need not to be same.
+
+Function OverRiding:Same no. of arguments,Name of function should be same.
+                    one in child another in parent. Child function is given preference over parent when object of child is created.
+
+If both function are static then it is hiding not overriding.
+If parent class function is static, then function with same name in child class should be static.
+
+Static variables do not inherit, but can be hided.
+
+Constructer of parent runs before constructer of child.
+
+
+Abstract class: Its object can not be created.We can make subclasses of its.
+Abstractclassname objectname=new Childclassname();
+Abstract class can have constructor. 
+
+Abstract Methods: Created in abstract class.It has no coding. We end it with semicolon.
+
+Normal class can not inherit Abstract class with abstract method.For this you have to override abstract method of parent class.You have to write method in child class again.
+
+Interface:Its object can not be created.In this, function has no coding.Its methods are abstract,non-static and public  by default.
+Its variables are final,public and static by default.
+Interface has no constructor.
+
+Interface/Class can have more than 1 parent interfaces.
+Interfacename objectname=new Childclassname();
+

@@ -1,0 +1,70 @@
+import java.util.*;
+import java.util.Arrays.*;
+import java.lang.*;
+import java.io.*;
+
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	Scanner sc=new Scanner(System.in);
+	int T=sc.nextInt();
+	      for(int i=0;i<T;i++)
+	       {
+		   int N=sc.nextInt();
+		   int a[]=new int[N];
+		        for(int j=0;j<N;j++)
+		        a[j]=sc.nextInt();
+		          for(int m=0;m<a.length-1;m++)
+		            for(int n=1;m<a.length;n++)  
+		            {
+		              int b[]=Arrays.copyOfRange(a,m,n);
+		              int max=0;
+		              if(pal(b)==true && max<n-m+1)
+		              {
+		              max=n-m+1;
+		              System.out.println("Y");
+		              }
+		            }  
+	       }     
+	}
+	public static boolean pal(int a[]) 
+	{
+    	for (int i=0;i<(a.length/2);++i) 
+    	{
+		        if (a[i]!=a[a.length-i-1]) 
+		         return false;
+    	} 
+      return true;
+	}  
+}
+/*class GfG
+{
+        public static int c(Node a,Node b)
+        {
+            int count = 0;
+            for(Node first=a,second=b;first!=null && second!=null;first=first.next,second=second.next)
+            {
+                if(first.data==second.data)
+                    ++count;
+                else
+                    break;
+            }
+            return count;
+        }
+        public static int maxPalindrome(Node head)
+        {
+            Node curr=head,prev=null,next=null;
+            int res=0;
+            while(curr!= null)
+            {
+                next=curr.next;
+                curr.next = prev;
+                res=Math.max(res,2*c(prev,next)+1);
+                res=Math.max(res,2*c(curr,next));
+                prev=curr;
+                curr=next;
+            }
+            return res;
+        }
+}*/

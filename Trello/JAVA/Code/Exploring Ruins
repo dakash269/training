@@ -1,0 +1,52 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		String s=sc.next();
+		int a[]=new int[s.length()];
+		int j=0;
+        int i=s.indexOf('?');
+        while(i >= 0) 
+        {
+        a[j]=i;
+        j++;
+        i=s.indexOf('?',i+1);
+        }
+        int count=j;
+        StringBuilder m = new StringBuilder(s);
+        for(j=0;j<count;j++)
+	    {
+	    	  if(s.length()!=1)
+	    	  {
+	    	     if(a[j]==0)
+	             {
+	                 if(m.charAt(a[j]+1)!='a')
+                     m.setCharAt(a[j],'a');
+                     else
+                     m.setCharAt(a[j],'b');
+	             } 
+	             if(a[j]!=0 && a[j]!=s.length()-1)
+	             {
+	                 if(m.charAt(a[j]-1)!='a' && m.charAt(a[j]+1)!='a')
+                     m.setCharAt(a[j],'a');
+                     else
+                     m.setCharAt(a[j],'b');
+	             }
+	             if(a[j]==s.length()-1)
+	             {
+	                 if(m.charAt(a[j]-1)!='a')
+                     m.setCharAt(a[j],'a');
+                     else
+                     m.setCharAt(a[j],'b');
+	             }
+	    	  }
+	    	  if(s.length()==1 && a[j]==0)
+                     m.setCharAt(a[j],'a');
+	    }
+	    System.out.println(m);
+	}
+}

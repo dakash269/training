@@ -1,0 +1,76 @@
+CREATE TABLE accidents(STATE VARCHAR (20),acc6 INT,acc7 INT,acc8 INT,acc9 INT,acc10 INT,acc11 INT,acc12 INT,acc13 INT,acc14 INT,acc15 INT);
+
+LOAD DATA LOCAL INFILE '/home/akash/Downloads/accidents.csv' INTO TABLE accidents FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 LINES;
+
+CREATE TABLE pop(ID VARCHAR (20),STATE1 VARCHAR (20),POP51 INT,POP61 INT,POP71 INT,POP81 INT,POP91 INT,POP01 INT,POP11 INT);
+
+LOAD DATA LOCAL INFILE '/home/akash/Downloads/pop.csv' INTO TABLE pop FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 LINES;
+
+
+
+SELECT state,acc6 FROM accidents WHERE state!='All India' ORDER BY acc6 DESC LIMIT 3;
+
+SELECT accidents.state AS 'State/UTs',ROUND((accidents.acc11/pop.pop11),10) AS 'Accidents Per Capita' FROM accidents JOIN pop ON pop.state1=accidents.state ORDER BY ROUND((accidents.acc11/pop.pop11),10)  DESC LIMIT 3;
+
+
+
+
+
+
+
+CREATE TABLE celebs(id INTEGER,name TEXT,age INTEGER);
+
+INSERT INTO celebs(id,name,age) 
+VALUES(1,'Justin Bieber',21);
+
+UPDATE celebs
+SET age=22
+WHERE id=1;
+
+ALTER TABLE celebs 
+ADD COLUMN
+twitter_handle TEXT;
+
+DELETE FROM celebs
+WHERE twitter_handle IS NULL;
+
+SELECT name FROM celebs;
+
+SELECT DISTINCT genre FROM movies;
+
+SELECT * FROM movies
+WHERE name LIKE 'Se_en';
+
+SELECT * FROM movies
+WHERE name LIKE '%man%';
+
+SELECT * FROM movies
+WHERE name BETWEEN 'A' AND 'J';
+
+SELECT * FROM movies
+WHERE genre = 'comedy'
+OR year < 1980;
+
+SELECT * FROM movies
+ORDER BY imdb_rating ASC
+LIMIT 3;
+
+SELECT COUNT(*) FROM fake_apps;
+
+SELECT COUNT(*) FROM fake_apps
+WHERE price = 0;
+
+SELECT price,COUNT(*) FROM fake_apps
+GROUP BY price;
+
+SELECT SUM(downloads) FROM fake_apps;
+
+SELECT MAX(downloads)  FROM fake_apps;
+
+SELECT AVG(downloads) FROM fake_apps;
+
+SELECT * FROM albums
+JOIN artists ON albums.artist_id=artists.id;
+
+SELECT * FROM flights
+WHERE origin in(SELECT code FROM airports WHERE elevation<2000);

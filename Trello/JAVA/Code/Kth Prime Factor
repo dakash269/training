@@ -1,0 +1,33 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG 
+{
+	public static void main (String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		int T=sc.nextInt();
+		for(int i=0;i<T;i++)
+		{
+		    int N=sc.nextInt();
+		    int K=sc.nextInt();
+		    int j=2,k=0;
+		    int a[]=new int[N];
+		    while(N>1)
+		    {
+		       if(N%j==0)
+		       {
+		       N=N/j;
+		       a[k]=j;
+		       k++;
+		       }
+		       else
+		        j++;
+		    }
+		    if(K>k)
+		    System.out.println("-1");
+		    else
+		    System.out.println(a[K-1]);
+		}
+	}
+}

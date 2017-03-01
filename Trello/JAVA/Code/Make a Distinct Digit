@@ -1,0 +1,30 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	Scanner sc=new Scanner(System.in);
+	int T=sc.nextInt();
+	      for(int i=0;i<T;i++)
+	       {
+		   int n=sc.nextInt();
+		   int a[]=new int[n];
+		   HashSet<Integer> s=new HashSet<Integer>();  
+					      for(int j=0;j<n;j++)
+					      {
+					      a[j]=sc.nextInt();
+			              while (a[j] > 0) 
+					              {
+					                  s.add(a[j]%10);
+					                  a[j]=a[j]/10;
+					              }
+		                  }
+						    Iterator it=s.iterator();
+						    while(it.hasNext()) 
+						    System.out.print(it.next()+" ");
+						    System.out.println(" ");
+	        }     
+	}
+}

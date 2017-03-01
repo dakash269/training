@@ -1,0 +1,107 @@
+
+
+using a single command kill the process.
+ pkill redshift
+  
+
+Signals are not only used to shut down programs. They can also be used to perform other actions.
+For instance, many daemons will restart when they are given the HUP, or hang-up signal.
+
+If the program is misbehaving and does not exit when given the TERM signal, we can escalate the signal by passing the kill -9 signal
+This is a special signal that is not sent to the program.Instead, it is given to the operating system kernel, which shuts down the process. This is used to bypass programs that ignore the signals sent to them.
+
+
+In Unix-like operating systems, every process except process 0 (the swapper) is created when another process executes the fork() system call. The process that invoked fork is the parent process and the newly created process is the child process. Every process (except process 0) has one parent process, but can have many child processes.
+
+
+chmod:user group other
+
+nohup: Most of the time you login into remote server via ssh. If you start a shell script or command and you exit (abort remote connection), the process / command will get killed. Sometime job or command takes a long time. If you are not sure when the job will finish, then it is better to leave job running in background. But, if you log out of the system, the job will be stopped and terminated by your shell.
+
+
+
+su: you can use it to switch to any user account. If you execute the su bob command, you’ll be prompted to enter Bob’s password and the shell will switch to Bob’s user account.
+
+sudo:It is a program for Unix-like computer operating systems that allows users to run programs with the security privileges of another user, by default the superuser.It originally stood for "superuser do"as the older versions of sudo were designed to run commands only as the superuser. 
+However, the later versions added support for running commands not only as the superuser but also as other (restricted) users, and thus it is also commonly expanded as "substitute user do".
+Su switches you to the root user account and requires the root account’s password. Sudo runs a single command with root privileges – it doesn’t switch to the root user or require a separate root user password.
+
+
+
+
+
+grep: print line matching a pattern
+grep is a command-line utility for searching plain-text data sets for lines matching a regular expression.
+
+
+
+
+pipe operator: a pipeline is a sequence of processes chained together by their standard streams, so that the output of each process (stdout) feeds directly as input (stdin) to the next one
+
+
+
+
+
+ps: report a snapshot of the current processes.
+The ps (process status) command is used to provide information about the currently running processes, including their process identification numbers (PIDs). 
+
+The -a option tells ps to list the processes of all users on the system rather than just those of the current user, with the exception of group leaders and processes not associated with a terminal. A group leader is the first member of a group of related processes. 
+The -e option generates a list of information about every process currently running. 
+The -f option generates a listing that contains fewer items of information for each process than the -l option. 
+
+
+
+kill-send a signal to a process
+
+echo: display a line of text
+
+xargs - build and execute command lines from standard input.xargs breaks the list of arguments into sublists small enough to be acceptable.
+
+sed - stream editor for filtering and transforming text
+
+sleep - delay for a specified amount of time
+
+
+
+OS:the low-level software that supports a computer's basic functions, such as scheduling tasks and controlling peripherals.
+It is system software that manages computer hardware and software resources and provides common services for computer programs. 
+All computer programs, excluding firmware, require an operating system to function.
+
+
+Type of OS:
+
+Single- and multi-user
+Distributed
+Templated
+Embedded
+Real-time
+Library
+
+Process: In computing, a process is an instance of a computer program that is being executed. It contains the program code and its current activity. Depending on the operating system (OS), a process may be made up of multiple threads of execution that execute instructions concurrently.
+A computer program is a passive collection of instructions, while a process is the actual execution of those instructions. Several processes may be associated with the same program; for example, opening up several instances of the same program often means more than one process is being executed.
+
+    Processing Modes:
+    Interactive processing,historically introduced as Time-sharing: It is the sharing of a computing resource among many users by means of multiprogramming and multi-tasking at the same time
+
+    Transaction processing:It is information processing that is divided into individual, indivisible operations called    transactions. Each transaction must succeed or fail as a complete unit; it can never be only partially complete.
+
+    Batch processing:is the execution of a series of jobs in a program on a computer without manual intervention.It is a processing mode: the execution of a series of programs each on a set or "batch" of inputs, rather than a single input (which would instead be a custom job). However, this distinction has largely been lost, and the series of steps in a batch process are often called a "job" or "batch job".
+
+    Real time processing:real-time computing or reactive computing describes hardware and software systems subject to a "real-time constraint", for example from event to system response.Real-time programs must guarantee response within specified time constraints, often referred to as "deadlines".The correctness of these types of systems depends on their temporal aspects as well as their functional aspects. Real-time responses are often understood to be in the order of milliseconds, and sometimes microseconds. 
+
+    Near real-time processing:a near-real-time display depicts an event or situation as it existed at the current time minus the processing time, as nearly the time of the live event
+
+
+
+
+
+
+VERSION CONTROL-is the management of changes to documents, computer programs, large web sites, and other collections of information. Changes are usually identified by a number or letter code, termed the "revision number", "revision level", or simply "revision". For example, an initial set of files is "revision 1". When the first change is made, the resulting set is "revision 2", and so on. Each revision is associated with a timestamp and the person making the change. Revisions can be compared, restored, and with some types of files, merged.
+Today, the most capable (as well as complex) revision control systems are those used in software development, where a team of people may change the same files.Software tools for revision control are essential for the organization of multi-developer projects.
+As teams design, develop and deploy software, it is common for multiple versions of the same software to be deployed in different sites and for the software's developers to be working simultaneously on updates. Bugs or features of the software are often only present in certain versions (because of the fixing of some problems and the introduction of others as the program develops). Therefore, for the purposes of locating and fixing bugs, it is vitally important to be able to retrieve and run different versions of the software to determine in which version(s) the problem occurs. It may also be necessary to develop two versions of the software concurrently (for instance, where one version has bugs fixed, but no new features (branch), while the other version is where new features are worked on (trunk).
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+    ArrayList al=new ArrayList();               //creating old non-generic arraylist  
+    ArrayList<String> al=new ArrayList<String>();//creating new generic arraylist 
+ 
+    Iterator it=al.iterator();
+    while(it.hasNext()) {    
+    System.out.println(""+al.get(k));
+    k++;     }
+
+    ArrayList<Student> al=new ArrayList<Student>();
+    al.add("C");  
+    al.remove(2);  
+
+    List<Book> li=new ArrayList<Book>();   
+    LinkedList<String> al=new LinkedList<String>();  
+    List<Book> list=new LinkedList<Book>();  
+
+
+    HashSet<String> se=new HashSet<String>();  
+    HashSet<Book> se=new HashSet<Book>(); 
+    TreeSet<Integer> treeset = new TreeSet<Integer>(hset);
+    Iterator it=se.iterator();
+    while(it.hasNext()) 
+    System.out.print(it.next()+" ");
+
+    HashMap<Integer,String> hm=new HashMap<Integer,String>(); 
+    hm.put(18,"Zara");
+    Set se= hm.entrySet();
+    Iterator i = s.iterator();
+    while(i.hasNext()) {
+    Map.Entry me = (Map.Entry)i.next();
+    System.out.print(me.getKey() + ": ");
+    System.out.println(me.getValue());
+
+    Map<Integer,Book> ma=new HashMap<Integer,Book>();     
+
+    s.charAt(8);
+    s1.indexOf("i");
+    s.substring(0,2);
+    s.length();
+    StringBuilder m = new StringBuilder(s);
+    m.setCharAt(8,'a');
+
+

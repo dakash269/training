@@ -1,0 +1,25 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Ideone
+{
+public static void main (String[] args) throws java.lang.Exception
+{
+	 for(int i=0;i<10;i++)
+	 {
+	 	System.out.format("%"+(10-i)*2+"s","");
+	 	for(int j=0;j<=i;j++)
+	 	{
+	 	   int a=fac(i)/(fac(i-j)*fac(j));
+	 	   System.out.format("%4d",a);
+	 	}
+	 	System.out.println(" ");
+	 }	 
+}
+ static int fac(int n)
+ {
+	if(n==1 || n==0)
+	return 1;
+	return fac(n-1)*n;
+ }
+}

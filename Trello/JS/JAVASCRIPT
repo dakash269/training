@@ -1,0 +1,40 @@
+confirm()
+alert()
+prompt()
+console.log()
+<button>
+getElementsByName();
+getElementsByTagName();
+getElementsByClassName();
+var x=document.getElementById();
+x.style.backgroundColor="green";
+
+<form action="">
+Name<input type="text" name="akash"/>
+    <input type="submit"/>                </form>
+
+function ram(nos)             var ram=function(nos)
+{
+}
+
+
+
+var o= {                     var o=new Object();           
+       } 
+
+var o=new ram();
+
+this.perimeter=function() {
+                          }
+
+Emperor.prototype=new Penguin();  //inheritance
+
+
+console.log("dfghj");
+var a=prompt("who are you");
+
+var ram=4;
+var ram="d";
+var ram=[2,'e',"ew"];         var ram=new Array();
+
+

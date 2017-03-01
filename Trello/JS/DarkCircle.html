@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>  
+<body>    
+<div id="images"></div>
+<canvas style="margin:0;padding:0;position:relative;left:50px;top:50px;" id="imgCanvas" width="2500" height="2500" onclick="draw(event)"></canvas>
+<script>
+/*if there is a 3r point outside circle finding the centroid and drawing the new circle
+
+var midx=(w[lar][0]+w[lar][2])/2;                         //finding the mid point and drawing circle
+			var midy=(w[lar][1]+w[lar][3])/2;
+
+			for(var i=0;i<p.length-1;i=i+2)
+			{
+				var l=Math.sqrt(Math.pow((midx-p[i]),2)+Math.pow((midy-p[i+1]),2));
+				lar=Math.max.apply(null,dist);
+				if(l>lar/2)
+				{                                                  //window.alert("hello");
+					var D=(p[i]-w[lar][2])*(w[lar][1]-w[lar][3])-(w[lar][0]-w[lar][2])*(p[i+1]-w[lar][3]);
+					var CeX=(((p[i]-w[lar][2])*(p[i]+w[lar][2])+(p[i+1]-w[lar][3])*(p[i+1]+w[lar][3]))/2*(w[lar][1]-w[lar][3])-((w[lar][0]-w[lar][2])*(w[lar][0]+w[lar][2])+(w[lar][1]-w[lar][3])*(w[lar][1]+w[lar][3]))/2*(p[i+1]-w[lar][3]))/D;
+					var CeY=(((w[lar][0]-w[lar][2])*(w[lar][0]+w[lar][2])+(w[lar][1]-w[lar][3])*(w[lar][1]+w[lar][3]))/2*(p[i]-w[lar][2])-((p[i]-w[lar][2])*(p[i]+w[lar][2])+(p[i+1]-w[lar][3])*(p[i+1]+w[lar][3]))/2*(w[lar][0]-w[lar][2]))/D;
+					var l=Math.sqrt(Math.pow((CeX-p[i]),2)+Math.pow((CeY-p[i+1]),2));
+					c.clearRect(0,0,canvas.width,canvas.height);
+					c.beginPath();
+					c.arc(CeX,CeY,l,0,2*Math.PI);
+		    		        c.stroke();
+		    		        markPoints();
+					break;
+				}
+			}                     */
+var canvas = document.getElementById("imgCanvas");
+var context = canvas.getContext("2d");
+function createImageOnCanvas(imageId) {
+    canvas.style.display = "block";
+    document.getElementById("images").style.overflowY = "hidden";
+    var img = new Image(300, 300);
+    img.src = document.getElementById(imageId).src;
+    context.drawImage(img, (0), (0)); //onload....
+}
+function draw(e) {
+    var pos = getMousePos(canvas, e);
+    posx = pos.x;
+    posy = pos.y;
+    context.fillStyle = "#000000";
+    context.beginPath();
+    context.arc(posx, posy, 50, 0, 2*Math.PI);
+    context.fill();
+}
+function getMousePos(canvas, evt) {
+    var rect = canvas.getBoundingClientRect();
+    return {
+      x: evt.clientX - rect.left,
+      y: evt.clientY - rect.top
+    };
+}
+window.draw = draw; 
+</script>
+ </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>  
+<body>    
+<canvas id="myCanvas" height="500" width="1000" onclick="draw(event)" style="border: 1px solid black;"></canvas>   
+<script>    
+        var canvas=document.getElementById("myCanvas");	
+        var c=canvas.getContext("2d");
+	var p=[];
+	var nP=false;
+	var lar=0.0;		
+function draw(e)                                       				     //function to draw the circle
+{	    
+var pos=mp(canvas,e);	    
+posx=pos.x;	    
+posy=pos.y;	    
+p.push(pos.x);	    
+p.push(pos.y);	   
+var f=false;	    
+   for(var i=0;i<p.length-2;i=i+2)
+     {	    	                                                                      //removing repeated point
+		if(p[i]===pos.x)
+		{	    		
+			if(p[i+1]===pos.y)
+			{	    			
+				p.splice(i,2);
+	    			var k=p.length-2;
+	    			p.splice(k,2);
+	    			f=true;
+	    			break;
+	    		}
+	    	}
+     }
+	    if(p.length>=4 && nP===false)
+ 	    {
+	    	nP=true;
+	    }
+	    if(f===false)
+	    {
+	    	c.fillStyle="#000000";
+		c.beginPath();
+		c.arc(posx,posy,1,0,2*Math.PI);
+	    }
+	    else
+	    {
+	    	c.fillStyle="#ffffff";
+	        c.beginPath();
+	    	c.arc(posx,posy,1,0,2*Math.PI);
+	    }
+	    c.fill();
+		var dist=[];                                              //Checking for number of p and finding the pair of p at max distance
+		if(nP===true)
+                {
+			var w = {}
+			for(var i=0;i<p.length-2;i=i+2)
+			{
+				for(var j=i+2;j<p.length-1;j=j+2)
+				{                                                 //window.alert(len); 
+					var l = Math.sqrt(Math.pow((p[j]-p[i]),2)+Math.pow((p[j+1]-p[i+1]),2));
+					w[l]=[p[i],p[i+1],p[j],p[j+1]];
+					dist.push(l);
+				}
+			}
+			lar=Math.max.apply(null,dist);
+			var midx=(w[lar][0]+w[lar][2])/2;                         //finding the mid point and drawing circle
+			var midy=(w[lar][1]+w[lar][3])/2;			
+			c.clearRect(0,0,canvas.width, canvas.height);	          //clearing the canvas of present circle and p
+			mark();						          //marking the point
+			c.beginPath();                                            //drawing the circle
+			c.arc(midx,midy,lar/2,0,2*Math.PI);
+			c.stroke();
+
+		  }
+}
+	function mark()                                			           //function to mark the points array
+	{
+		for(var i=0;i<p.length-1;i=i+2)
+		{
+		    c.fillStyle="#000000";
+		    c.beginPath();
+		    c.arc(p[i],p[i+1],1,0,2*Math.PI);
+		    c.fill();
+		}
+	}
+	function mp(canvas, evt) 
+	{                   				                            //function to get the location of the click
+	    var r=canvas.getBoundingClientRect();
+	    return {x:evt.clientX-r.left,y:evt.clientY-r.top};
+	}
+    </script>
+  </body>
+</html>

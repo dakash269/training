@@ -1,0 +1,41 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int T=sc.nextInt();
+		for(int i=0;i<T;i++)
+		{
+			int N=sc.nextInt();
+			ArrayList<Integer> a=new ArrayList<Integer>();
+			for(int j=0;j<N;j++)
+				a.add(sc.nextInt());
+			int out=a.get(0);
+			if(N>1)
+			{
+			for(int k=1;k<N;k++)	
+			out=g(a.get(k),out);
+			if(out==1)
+			System.out.println("YES");
+			else
+			System.out.println("NO");
+			}
+			else
+			{
+				if(out==1)
+					System.out.println("YES");
+			    else
+			        System.out.println("NO");
+			}
+		}
+	}
+	static int g(int a,int b)
+	{
+		if(a==0)
+		return b;
+		return g(b%a,a) ;
+	}
+}

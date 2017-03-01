@@ -1,0 +1,43 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	Scanner sc=new Scanner(System.in);
+	int A=sc.nextInt();
+	int B=sc.nextInt();
+	int i=2;
+	int j=0;
+    int a[]=new int[1000];
+         while(A>1)
+         {
+    	   if(A%i==0)
+    	   {
+    	   a[j]=i;
+    	   j++;
+    	   A=A/i;
+    	   }
+    	   else
+    	   i++;
+         }
+         HashMap<Integer,Integer> h=new HashMap<Integer,Integer>();  
+         j=0;
+         int count=0;
+         while(a[j]!=0)
+         {
+             if(a[j]!=a[j-1])
+            {
+            System.out.println(a[j]);
+            h.put(a[j],count);
+                for(Map.Entry m:h.entrySet())
+                {  
+                System.out.println(m.getKey()+" "+m.getValue());  
+                }  
+            } 
+            else
+           j++;
+         }
+	}  
+}

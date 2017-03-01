@@ -1,0 +1,40 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	 Scanner sc=new Scanner(System.in);
+	 int r=sc.nextInt();
+	 int g=sc.nextInt();
+	 int b=sc.nextInt();
+	 int M=0;
+	 int sum=min(r,g,b);
+	 int r1=r-min(r,g,b);
+	 int g1=g-min(r,g,b);
+	 int b1=b-min(r,g,b);
+	 M=max(r1,g1,b1);
+	 int a=M*2-(r1+g1+b1);
+	 int c=max(r1,g1,b1)-a;
+	 sum=sum+c/2+c%2+M/2+M%2;
+	 System.out.print(sum);
+	}
+	static int min(int a,int b,int c)
+	{
+		if(a<b && a<c)
+		return a;
+		if(b<a && b<c)
+		return b;
+		return c;
+	}
+	static int max(int a,int b,int c)
+	{
+		if(a>b && a>c)
+		return a;
+		if(b>a && b>c)
+		return b;
+		return c;
+	}
+	
+}

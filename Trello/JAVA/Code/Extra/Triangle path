@@ -1,0 +1,47 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Ideone
+{
+	public static void main (String[] args)
+	{
+	Scanner sc=new Scanner(System.in);
+	int n=sc.nextInt();
+	int out=0,mid=0;
+	int a[][]=new int[n][n];
+	for(int i=0;i<n;i++)
+	{
+		for(int j=0;j<i+1;j++)
+		{
+			a[i][j]=sc.nextInt();
+		}
+	}
+	for(int i=0;i<n-1;i++)
+	{
+		for(int j=0;j<=i;j++)
+		{
+			mid=Math.max((a[i][j]+a[i+1][j]),(a[i][j]+a[i+1][j+1]));
+		
+		}
+	}
+	
+//	System.out.println(out);
+   System.out.println(mid);
+   for(int i=0;i<n;i++)
+	{
+		for(int j=0;j<i+1;j++)
+		{
+		System.out.print(a[i][j]+" ");	
+		}
+		System.out.println(" " );	
+	}
+	
+	
+	
+	
+	
+	
+	
+		
+	}
+}

@@ -1,0 +1,41 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	Scanner sc=new Scanner(System.in);
+	int T=sc.nextInt();
+	int a[][]=new int[T][2];
+	      for(int i=0;i<T;i++)
+	     {
+	                for(int j=0;j<2;j++)
+	    				a[i][j]=sc.nextInt();
+	    		System.out.println(hcf(fib(a[i][0]),fib(a[i][1])));
+	     }
+	}
+	static int hcf(int a,int b)
+	{
+		int out=1;
+		int temp=0;
+		    if(a>b)
+		   {
+			temp=a;
+			a=b;
+			b=temp;
+		   }
+		   for(int i=1;i<=a;i++)
+		   {
+			if(a%i==0 && b%i==0)
+			out=i;
+		   }
+		return out;
+	}
+	static int fib(int n)
+	{
+		if(n==1 || n==2)
+		return 1;
+	 return fib(n-1)+fib(n-2);	
+	}
+}

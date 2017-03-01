@@ -1,0 +1,25 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	  Scanner sc=new Scanner(System.in);
+	  int n=sc.nextInt();
+	  int m=sc.nextInt();
+	  int a[]=new int[n+1];
+	  for(int i=1;i<=n;i++)
+	      a[i]=sc.nextInt();
+	  for(int j=0;j<m;j++)
+	  {
+	     int l=sc.nextInt();
+	     int r=sc.nextInt();
+	     int x=sc.nextInt();
+	     int sum=0;
+	     for(int k=l;k<=r;k++)
+	     sum=sum+a[k]%x;
+	     System.out.println(sum);
+	  }
+	}
+}
